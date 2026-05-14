@@ -1,0 +1,17 @@
+/* Game critic, este es el principio */
+
+:root {
+  --bg: #0a0a0c;
+  --bg-card: #111114;
+  --white: #f0f0f0;
+  --muted: #6b7280;
+  --neon: #39ff64;
+  --red: #ff3939;
+  --border-glass: rgba(255, 255, 255, 0.08);
+
+  --ff-display: "Barlow Condensed", sans-serif;
+  --ff-body: "Inter", sans-serif;
+  --ff-mono: "JetBrains Mono", monospace;
+}
+
+/* estilos generales del body (quizás despues se cambian), navbar, hero, cards, sidebar, footer... */
