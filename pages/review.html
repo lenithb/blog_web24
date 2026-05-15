@@ -13,14 +13,16 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="icon" href="../img/favicon/favicon-32x32.png" />
+    <link rel="icon" href="../img/favicon/android-chrome192x192.png" />
+    <link rel="icon" href="../img/favicon/android-chrome-512x512.png" />
+    <link rel="icon" href="../img/favicon/apple-touch-icon.png" />
+    <link rel="icon" href="../img/favicon/favicon.ico" />
   </head>
   <body>
-    <!-- navbar — TODO: aplicar estilos propios (fixed-top, brand con span de color, etc.) -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="../index.html"
-          >GAMECR&Iacute;TIC</a
-        >
+        <a class="navbar-brand" href="../index.html">GAME<span>CRITIC</span></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -33,7 +35,9 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navMenu">
-          <ul class="navbar-nav ms-auto">
+          <ul
+            class="navbar-nav ms-auto align-items-lg-center gap-lg-1 py-3 py-lg-0"
+          >
             <li class="nav-item">
               <a class="nav-link" href="../index.html">Inicio</a>
             </li>
@@ -44,43 +48,116 @@
               <a class="nav-link" href="galeria.html">Galería</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="acerca.html">Acerca</a>
+              <a class="nav-link" href="nosotros.html">Nosotros</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contacto.html">Contacto</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ms-lg-2">
               <a class="nav-link" href="login.html">Login</a>
+            </li>
+            <li class="nav-item ms-lg-2">
+              <a class="nav-link btn-nav-subscribe" href="login.html"
+                >Suscribirse</a
+              >
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- header de sección -->
-    <div class="bg-dark text-white py-5 border-bottom border-secondary">
-      <div class="container py-3">
-        <h1 class="h2 fw-bold">Reviews</h1>
-        <p class="text-secondary mb-3">
-          Reseñas completas con análisis en profundidad.
+    <div class="placeholder-hero">
+      <div class="container">
+        <p class="section-label">Game Critic</p>
+        <h1>Reviews</h1>
+        <p>
+          Esta sección será expandida próximamente con reseñas completas,<br
+            class="d-none d-md-block"
+          />filtros por plataforma, género y score.
         </p>
-        <a href="../index.html" class="btn btn-sm btn-outline-secondary">
-          <i class="bi bi-arrow-left me-1"></i>Volver al inicio
-        </a>
+        <a href="../index.html" class="btn-back"
+          ><i class="bi bi-arrow-left me-2"></i>Volver al inicio</a
+        >
       </div>
     </div>
 
-    <!-- grilla de cards con imagen, score y filtros por plataforma/género -->
-    <div class="container py-5 text-center text-secondary">
-      <p class="small">Seguir aqui</p>
+    <!-- 
+         EMPIECEN ACÁ — página Reviews
+         
+         Qué puede ir en esta sección:
+         - Grilla de cards con todas las reseñas (igual que el index pero
+           sin sidebar, más espacio para mostrar más juegos)
+         - Filtros por: plataforma (PC, PS5, Xbox, Switch), género,
+           rango de score (Masterpiece 95+, Must-play 80-94, etc.)
+         - Barra de búsqueda en tiempo real
+         - Paginación o scroll infinito (definir con el equipo)
+         - Cada card lleva a una página de review individual
+           (ej: pages/reviews/elden-ring.html) — esa estructura
+           de subcarpeta todavía no existe, hay que crearla pero se puede copiar una vez creada para todos los juegos
+         
+         Sugerencia de estructura de card:
+         - Imagen del juego (screenshot o key art)
+         - Título + desarrollador
+         - Score con color según rango
+         - Etiquetas de género y plataforma
+         - Extracto de 2-3 líneas del texto de la reseña
+         - Botón "Leer reseña completa" (No tiene que funcionar o mandar al 404) (borren esto cuando suba la rama a github culiao)
+      -->
+
+    <div class="container py-5 text-center">
+      <div
+        style="
+          border: 1px dashed var(--border-glass);
+          border-radius: 12px;
+          padding: 4rem 2rem;
+          color: var(--muted);
+        "
+      >
+        <i
+          class="bi bi-controller"
+          style="
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+            color: var(--neon);
+            opacity: 0.4;
+          "
+        ></i>
+        <p
+          style="
+            font-family: var(--ff-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+          "
+        >
+          Contenido en desarrollo — ver comentario arriba
+        </p>
+      </div>
     </div>
 
-    <!-- footer mínimo — TODO: reemplazar con el footer completo de columnas -->
-    <footer class="bg-dark border-top border-secondary py-4 mt-5">
-      <div class="container text-center text-secondary small">
-        <p class="mb-0">
-          &copy; 2024 GameCritic. Todos los derechos reservados.
-        </p>
+    <footer class="site-footer mt-5">
+      <div class="container">
+        <div
+          class="footer-bottom"
+          style="
+            margin-top: 0;
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--border-glass);
+          "
+        >
+          <p>
+            &copy; 2026 Game<span class="neon-dot">Critic</span>. Todos los
+            derechos reservados.
+          </p>
+          <p>
+            <a
+              href="../index.html"
+              style="color: var(--neon); font-size: 0.8rem"
+              >← Volver al inicio</a
+            >
+          </p>
+        </div>
       </div>
     </footer>
 

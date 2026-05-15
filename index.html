@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game Critic — Reseñas de Videojuegos</title>
+    <meta
+      name="description"
+      content="Game Critic — Reseñas premium de videojuegos, análisis profundos y las últimas novedades del mundo gaming."
+    />
+    <title>Game Critic | Reseñas de Juegos</title>
+    <link rel="icon" href="../img/favicon/favicon-32x32.png" />
+    <link rel="icon" href="../img/favicon/android-chrome192x192.png" />
+    <link rel="icon" href="../img/favicon/android-chrome-512x512.png" />
+    <link rel="icon" href="../img/favicon/apple-touch-icon.png" />
+    <link rel="icon" href="../img/favicon/favicon.ico" />
 
     <link
       rel="stylesheet"
@@ -16,7 +25,7 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <!-- navbar -->
+    <!-- Navbar principal — el "active" lo pone cada página según dónde esté el usuario -->
     <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
       <div class="container">
         <a class="navbar-brand" href="index.html">GAME<span>CRITIC</span></a>
@@ -44,13 +53,13 @@
               <a class="nav-link" href="pages/review.html">Reviews</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/gallery.html">Galería</a>
+              <a class="nav-link" href="pages/galeria.html">Galería</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/about.html">Acerca</a>
+              <a class="nav-link" href="pages/nosotros.html">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/contact.html">Contacto</a>
+              <a class="nav-link" href="pages/contacto.html">Contacto</a>
             </li>
             <li class="nav-item ms-lg-2">
               <a class="nav-link" href="pages/login.html">Login</a>
@@ -65,33 +74,206 @@
       </div>
     </nav>
 
-    <!-- falta carusel -->
+    <!-- ═══════════════════════════════════════════════════════════════════
+         HERO CAROUSEL
+         Las imágenes del hero todavía no existen — hay que agregar los
+         archivos en img/hero/ con los nombres que aparecen en cada slide.
+         Por ahora usamos las img/aX.webp como placeholder para que el
+         carousel funcione y se pueda probar el layout.
+         ═══════════════════════════════════════════════════════════════════ -->
     <div
-      style="
-        min-height: 85vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 57px;
-      "
+      id="heroCarousel"
+      class="carousel slide carousel-fade"
+      data-bs-ride="carousel"
+      data-bs-interval="5500"
     >
-      <div class="text-center px-3">
-        <p class="section-label">Próximamente</p>
-        <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); color: var(--white)">
-          Hero Carousel
-        </h1>
-        <p style="color: var(--muted); max-width: 420px; margin: 1rem auto 0">
-          Slider con las reseñas destacadas. Pendiente de armar con las imágenes
-          finales.
-        </p>
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="0"
+          class="active"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="3"
+        ></button>
       </div>
-    </div>
 
-    <!-- contenido principal -->
+      <div class="carousel-inner">
+        <!-- slide 1 elden ring -->
+        <div class="carousel-item active">
+          <div class="hero-slide">
+            <div
+              class="hero-bg"
+              style="background-image: url(&quot;img/elden.png&quot;)"
+            ></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+              <div class="hero-badge">Reseña Destacada</div>
+              <h1 class="hero-title">Elden Ring</h1>
+              <p class="hero-desc">
+                Para el que viene jugando Soulslikes esto es papita para el loro. <br>
+                Lanzada por FromSoftware
+              </p>
+              <div class="hero-score">
+                <div class="score-box">87</div>
+                <div class="score-label">Score<br />Game Critic</div>
+              </div>
+              <div>
+                <a href="pages/review.html" class="btn-hero">Leer review</a>
+                <a href="pages/galeria.html" class="btn-hero btn-hero-outline"
+                  >Ver galería</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- slide 2 gow -->
+        <div class="carousel-item">
+          <div class="hero-slide">
+            <div
+              class="hero-bg"
+              style="
+                background-image: url(&quot;img/gow.png&quot;);
+                background-position: center 20%;
+              "
+            ></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+              <div class="hero-badge">Juego del Año 2022</div>
+              <h1 class="hero-title">God of War<br />Ragnarök</h1>
+              <p class="hero-desc">
+                Kratos y Atreus enfrentan el apocalipsis nórdico. Una aventura
+                cinematográfica de proporciones épicas que supera a su
+                predecesor en todos los aspectos.
+              </p>
+              <div class="hero-score">
+                <div class="score-box">89</div>
+                <div class="score-label">Score<br />Game Critic</div>
+              </div>
+              <div>
+                <a href="pages/review.html" class="btn-hero">Leer review</a>
+                <a href="pages/galeria.html" class="btn-hero btn-hero-outline"
+                  >Ver galería</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- slide 3 Cyberpunk  -->
+        <div class="carousel-item">
+          <div class="hero-slide">
+            <div
+              class="hero-bg"
+              style="
+                background-image: url(&quot;img/cyber.png&quot;);
+                background-position: center 15%;
+              "
+            ></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+              <div class="hero-badge">Redención Total</div>
+              <h1 class="hero-title">Cyberpunk<br />2077</h1>
+              <p class="hero-desc">
+                Salió con 100 mil bugs y mala optimización.<br>
+                Pero hoy en día es un juegaso para testear la pc y pasartelo.
+              </p>
+              <div class="hero-score">
+                <div class="score-box">77</div>
+                <div class="score-label">Score<br />Game Critic</div>
+              </div>
+              <div>
+                <a href="pages/review.html" class="btn-hero">Leer review</a>
+                <a href="pages/galeria.html" class="btn-hero btn-hero-outline"
+                  >Ver galería</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- slide 4 fallout -->
+        <div class="carousel-item">
+          <div class="hero-slide">
+            <div
+              class="hero-bg"
+              style="
+                background-image: url(&quot;img/fallout.png&quot;);
+                background-position: center 10%;
+              "
+            ></div>
+            <div
+              class="hero-overlay"  
+              style="
+                background: linear-gradient(
+                  to right,
+                  rgba(10, 10, 12, 0.95) 0%,
+                  rgba(10, 10, 12, 0.7) 50%,
+                  rgba(10, 10, 12, 0.25) 100%
+                );
+              "
+            ></div>
+            <div class="hero-content">
+              <div class="hero-badge">Bethesda</div>
+              <h1 class="hero-title">Fallout New Vegas</h1>
+              <p class="hero-desc">
+                El juego favorito de tu juego favorito.
+                <br> aúnque el que creo esta slider es enfermo de este juego, efectivamente es un juegaso.
+              </p>
+              </p>
+              <div class="hero-score">
+                <div class="score-box">79</div>
+                <div class="score-label">Score<br />Game Critic</div>
+              </div>
+              <div>
+                <a href="pages/review.html" class="btn-hero">Leer review</a>
+                <a href="pages/galeria.html" class="btn-hero btn-hero-outline"
+                  >Ver galería</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+    <!-- fin hero carousel -->
+
+
     <section class="content-wrapper">
       <div class="container">
         <div class="row g-4">
-          <!-- columna principal -->
+          <!-- columna principal listado de reviews -->
           <div class="col-lg-8">
             <div class="mb-4">
               <p class="section-label">Últimas reseñas</p>
@@ -99,43 +281,233 @@
               <hr class="section-rule" />
             </div>
 
-            <!-- imagenes faltantes -->
-            <div
-              style="
-                border: 1px dashed var(--border-glass);
-                border-radius: 12px;
-                padding: 5rem 2rem;
-                text-align: center;
-                color: var(--muted);
-              "
-            >
-              <i
-                class="bi bi-layout-text-sidebar-reverse"
-                style="
-                  font-size: 2.5rem;
-                  color: var(--neon);
-                  opacity: 0.35;
-                  display: block;
-                  margin-bottom: 1rem;
-                "
-              ></i>
-              <p
-                style="
-                  font-family: var(--ff-mono);
-                  font-size: 0.75rem;
-                  letter-spacing: 0.15em;
-                  text-transform: uppercase;
-                "
-              >
-                Cards de reviews — pendiente
-              </p>
+            <!-- grilla de cards de review -->
+            <div class="row g-4">
+              <!-- elden ring-->
+              <div class="col-md-6">
+                <div class="review-card">
+                  <div class="review-card-img">
+                    <img src="img/elden.png" alt="Elden Ring" loading="lazy" />
+                    <span class="card-genre">RPG / Soulslike</span>
+                    <div class="card-score">92</div>
+                  </div>
+                  <div class="review-card-body">
+                    <h5>Elden Ring</h5>
+                    <p>
+                      El simulador de hoguera, lvl, rodar, morir, repetir
+                      sacando que no es juego para todo el mundo, honestamente top 3 souls.
+                    </p>
+                    <a href="pages/review.html" class="btn-review"
+                      >Ver review <i class="bi bi-arrow-right ms-1"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- gow -->
+              <div class="col-md-6">
+                <div class="review-card">
+                  <div class="review-card-img">
+                    <img
+                      src="img/gow.png"
+                      alt="God of War Ragnarök"
+                      loading="lazy"
+                    />
+                    <span class="card-genre">Acción / Aventura</span>
+                    <div class="card-score">94</div>
+                  </div>
+                  <div class="review-card-body">
+                    <h5>God of War Ragnarök</h5>
+                    <p>
+                      La conclusión de la saga nórdica entrega escenas
+                      memorables, combate refinado y una narrativa que eleva el
+                      estándar del storytelling en videojuegos.
+                    </p>
+                    <a href="pages/review.html" class="btn-review"
+                      >Ver review <i class="bi bi-arrow-right ms-1"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- fallout -->
+              <div class="col-md-6">
+                <div class="review-card">
+                  <div class="review-card-img">
+                    <img src="img/fallout.png" alt="Fallout" loading="lazy" />
+                    <span class="card-genre">Action | RPG</span>
+                    <div class="card-score">96</div>
+                  </div>
+                  <div class="review-card-body">
+                    <h5>Fallout New Vegas</h5>
+                    <p>
+                      Imagínense que son un mensajero que vive en un mundo destrozado por la guerra nuclear, 
+                      caminando por el desierto de Mojave con un paquete misterioso en las manos. 
+                      De repente, un tipo con un traje de cuadros te asalta, te pega un tiro en la cabeza, te entierra y se lleva lo que traías. 
+                      Pero el juego te va llevando a otra parte.
+                    </p>
+                    <a href="pages/review.html" class="btn-review"
+                      >Ver review <i class="bi bi-arrow-right ms-1"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- cyberpunk 2077 -->
+              <div class="col-md-6">
+                <div class="review-card">
+                  <div class="review-card-img">
+                    <img
+                      src="img/cyber.png"
+                      alt="Cyberpunk 2077"
+                      loading="lazy"
+                    />
+                    <span class="card-genre">RPG / Open World</span>
+                    <div class="card-score">91</div>
+                  </div>
+                  <div class="review-card-body">
+                    <h5>Cyberpunk 2077: Phantom Liberty</h5>
+                    <p>
+                      La gente se quejo de un openworld muerto, pero con la 2.0 y sus dlcs CD Projekt salvo este juego.
+                    </p>
+                    <a href="pages/review.html" class="btn-review"
+                      >Ver review <i class="bi bi-arrow-right ms-1"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="review-card">
+                  <div class="review-card-img">
+                    <img
+                      src="img/outer.png"
+                      alt="Outer Wilds"
+                      loading="lazy"
+                    />
+                    <span class="card-genre">Indie GOTY</span>
+                    <div class="card-score">91</div>
+                  </div>
+                  <div class="review-card-body">
+                    <h5>Outer Wilds</h5>
+                    <p>
+                      Personalmente una joyita,  es un juego de exploración espacial en primera persona donde encarnas a un astronauta atrapado en un bucle temporal de 22 minutos.
+                    </p>
+                    <a href="pages/review.html" class="btn-review"
+                      >Ver review <i class="bi bi-arrow-right ms-1"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+
+              
+
+              <!-- re4 remake -->
+              <div class="col-md-6">
+                <div class="review-card">
+                  <div class="review-card-img">
+                    <img 
+                    src="img/re4.png" 
+                    alt="Resident Evil 4"
+                    loading="lazy"
+                    />
+                    <span class="card-genre">Survival Horror</span>
+                    <div class="card-score">93</div>
+                  </div>
+                  <div class="review-card-body">
+                    <h5>Resident Evil 4 Remake</h5>
+                    <p>
+                      Capcom tomó uno de los mejores juegos de la historia y lo
+                      rehízo respetando su esencia. El resultado es un remake
+                      que supera al original en casi todos los aspectos.
+                    </p>
+                    <a href="pages/review.html" class="btn-review"
+                      >Ver review <i class="bi bi-arrow-right ms-1"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- silksong -->
+              <div class="col-12">
+                <div class="review-card">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <div class="review-card-img h-100">
+                        <img 
+                         src="img/silk.png" 
+                         alt="Silksong"
+                         loading="lazy"
+                         />
+                        <span class="card-genre">Indie Destacado</span>
+                        <div
+                          class="card-score"
+                          style="background: #c91313; color: #fff"
+                        >
+                          89
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <div
+                        class="review-card-body d-flex flex-column justify-content-between h-100"
+                      >
+                        <div>
+                          <h5>Hollow Knight Silksong</h5>
+                          <p style="-webkit-line-clamp: unset">
+                            Hollow Knight: Silksong es la secuela del aclamado metroidvania, desarrollada por Team Cherry y lanzada el 4 de septiembre de 2025 para Windows, macOS, Linux y Nintendo Switch.  
+                            La narrativa sigue a Hornet, quien, tras ser capturada y transportada a la lejana tierra de Telalejana, debe ascender hacia la Ciudadela para descubrir la identidad de sus captores y resolver los misterios de un reino gobernado por la seda y la canción. 
+                          </p>  
+                        </div>
+                        <a href="pages/review.html" class="btn-review"
+                          >Ver review <i class="bi bi-arrow-right ms-1"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <!-- fin grilla de reviews -->
+
+            <!-- paginación por ahora estática -->
+            <nav class="mt-5" aria-label="Review pages">
+              <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#"
+                    ><i class="bi bi-chevron-left"></i
+                  ></a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <span
+                    class="page-link"
+                    style="
+                      background: transparent;
+                      border-color: transparent;
+                      color: var(--muted);
+                    "
+                    >…</span
+                  >
+                </li>
+                <li class="page-item"><a class="page-link" href="#">12</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#"
+                    ><i class="bi bi-chevron-right"></i
+                  ></a>
+                </li>
+              </ul>
+            </nav>
           </div>
+          <!-- fin columna principal -->
 
           <!-- sidebar -->
           <div class="col-lg-4">
             <aside class="sidebar">
-              <!-- buscador -->
               <div class="sidebar-widget">
                 <h6><i class="bi bi-search me-2"></i>Buscar</h6>
                 <div class="search-wrap">
@@ -144,81 +516,169 @@
                 </div>
               </div>
 
-              <!-- widget categorias -->
+              <!-- categorías con conteo de reseñas -->
               <div class="sidebar-widget">
                 <h6><i class="bi bi-grid me-2"></i>Categorías</h6>
-                <div
-                  style="
-                    padding: 2rem 0;
-                    text-align: center;
-                    color: var(--muted);
-                  "
-                >
-                  <p
-                    style="
-                      font-family: var(--ff-mono);
-                      font-size: 0.7rem;
-                      letter-spacing: 0.1em;
-                      text-transform: uppercase;
-                    "
-                  >
-                    Pendiente
-                  </p>
+                <ul class="cat-list">
+                  <li>
+                    <span>RPG</span>
+                    <span class="cat-count">48</span>
+                  </li>
+                  <li>
+                    <span>Acción | Aventura</span>
+                    <span class="cat-count">62</span>
+                  </li>
+                  <li>
+                    <span>Survival Horror</span>
+                    <span class="cat-count">27</span>
+                  </li>
+                  <li>
+                    <span>Indie</span>
+                    <span class="cat-count">35</span>
+                  </li>
+                  <li>
+                    <span>Estrategia</span>
+                    <span class="cat-count">19</span>
+                  </li>
+                  <li>
+                    <span>Open World</span>
+                    <span class="cat-count">44</span>
+                  </li>
+                  <li>
+                    <span>Plataformas</span>
+                    <span class="cat-count">31</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- estrenos -->
+              <div class="sidebar-widget">
+                <h6><i class="bi bi-trophy me-2"></i>Estrenos final 2025-2026</h6>
+
+                <div class="rank-item">
+                  <div class="rank-num">01</div>
+                  <img src="img/requiem.png" alt="Resident Evil Requiem" class="rank-img"/>
+                  <div class="rank-info">
+                    <div class="rank-name">RE: Requiem</div>
+                    <div class="rank-genre">Horror</div>
+                  </div>
+                  <div class="rank-score">2026</div>
+                </div>
+
+                <div class="rank-item">
+                  <div class="rank-num">02</div>
+                  <img src="img/reanimal.png" alt="Reanimal" class="rank-img" />
+                  <div class="rank-info">
+                    <div class="rank-name">Reanimal</div>
+                    <div class="rank-genre">Indie Horror</div>
+                  </div>
+                  <div class="rank-score">2026</div>
+                </div>
+
+                <div class="rank-item">
+                  <div class="rank-num">03</div>
+                  <img src="img/fh6.png" alt="Forza 6" class="rank-img" />
+                  <div class="rank-info">
+                    <div class="rank-name">Forza Horizon 6</div>
+                    <div class="rank-genre">Racing</div>
+                  </div>
+                  <div class="rank-score">2026</div>
+                </div>
+
+                <div class="rank-item">
+                  <div class="rank-num">04</div>
+                  <img src="img/hades.png" alt="Hades II" class="rank-img" />
+                  <div class="rank-info">
+                    <div class="rank-name">Hades II</div>
+                    <div class="rank-genre">Hack and Slash</div>
+                  </div>
+                  <div class="rank-score">2025</div>
+                </div>
+
+                <div class="rank-item">
+                  <div class="rank-num">05</div>
+                  <img
+                    src="img/kingdom.png"
+                    alt="Kingdom Come Deliverance 2"
+                    class="rank-img"
+                  />
+                  <div class="rank-info">
+                    <div class="rank-name">Kingdom Come Deliverance 2</div>
+                    <div class="rank-genre">RPG de acción</div>
+                  </div>
+                  <div class="rank-score">2025</div>
                 </div>
               </div>
 
-              <!-- div.rankitem -->
-              <div class="sidebar-widget">
-                <h6><i class="bi bi-trophy me-2"></i>Top Juegos</h6>
-                <div
-                  style="
-                    padding: 2rem 0;
-                    text-align: center;
-                    color: var(--muted);
-                  "
-                >
-                  <p
-                    style="
-                      font-family: var(--ff-mono);
-                      font-size: 0.7rem;
-                      letter-spacing: 0.1em;
-                      text-transform: uppercase;
-                    "
-                  >
-                    Pendiente
-                  </p>
-                </div>
+              <!-- banner oculto en mobile, visible desde sm en adelante -->
+              <div class="sidebar-banner d-none d-sm-block">
+                <h6>Publicidad</h6>
+                <p>GeForce RTX 5090<br />Domina cada pixel</p>
+                <small>Disponible en tiendas seleccionadas</small>
+                <a href="pages/404.html" class="btn-banner">Ver oferta</a>
               </div>
             </aside>
           </div>
+          <!-- fin sidebar -->
         </div>
       </div>
     </section>
+    <!-- fin contenido principal -->
 
-    <!-- juego del mes -->
     <section class="gotm-section">
       <div class="container">
-        <div class="text-center py-5" style="color: var(--muted)">
-          <i
-            class="bi bi-calendar-star"
-            style="
-              font-size: 2.5rem;
-              color: var(--neon);
-              opacity: 0.35;
-              display: block;
-              margin-bottom: 1rem;
-            "
-          ></i>
-          <p
-            style="
-              font-family: var(--ff-mono);
-              font-size: 0.75rem;
-              letter-spacing: 0.15em;
-              text-transform: uppercase;
-            "
-          >
-            Sección "Juego del Mes" — pendiente
-          </p>
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <div class="gotm-img-wrap">
+              <img src="img/elden.png" alt="Elden Ring — Juego del Mes" />
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="gotm-badge"><span></span>Juego del Mes Mayo 2025</div>
+            <h2 class="gotm-title">Elden Ring:<br />Shadow of the Erdtree</h2>
+
+            <div class="gotm-score-block">
+              <div class="gotm-score-num">97</div>
+              <div class="gotm-score-details">
+                <div class="gotm-score-label">Game Critic Score</div>
+                <div style="font-size: 0.8rem; color: var(--muted)">
+                  Basado en 240 reseñas
+                </div>
+              </div>
+            </div>
+
+            <div class="gotm-meta">
+              <div class="gotm-meta-item">
+                <strong>FromSoftware</strong>
+                Desarrollador
+              </div>
+              <div class="gotm-meta-item">
+                <strong>Bandai Namco</strong>
+                Publisher
+              </div>
+              <div class="gotm-meta-item">
+                <strong>PC | PS5 | XBOX</strong>
+                Plataformas
+              </div>
+              <div class="gotm-meta-item">
+                <strong>Soulslike | RPG</strong>
+                Género
+              </div>
+            </div>
+
+            <p class="gotm-desc">
+              Shadow of the Erdtree no es simplemente una expansión — es una
+              segunda obra maestra. FromSoftware construyó el Land of Shadow con
+              la misma ambición que el juego base, empaquetado en una
+              experiencia que rivaliza con lanzamientos completos en profundidad
+              y diseño.
+            </p>
+
+            <a href="pages/review.html" class="btn-primary-gc"
+              >Leer reseña completa <i class="bi bi-arrow-right ms-2"></i
+            ></a>
+          </div>
         </div>
       </div>
     </section>
@@ -234,7 +694,8 @@
               Las mejores reseñas, novedades y análisis directamente en tu
               bandeja de entrada. Una vez por semana, nada más.
             </p>
-            <!-- TODO: agregar acción al form cuando esté definido el destino -->
+
+            <!-- mail -->
             <div class="input-group newsletter-form">
               <input
                 type="email"
@@ -256,6 +717,7 @@
     <footer class="site-footer">
       <div class="container">
         <div class="row g-5">
+          <!-- branding + descripción -->
           <div class="col-lg-4">
             <div class="footer-logo">GAME<span>CRITIC</span></div>
             <p class="footer-desc">
@@ -265,6 +727,7 @@
             </p>
           </div>
 
+          <!-- redes sociales (todo manda al 404)-->
           <div class="col-lg-3 col-sm-6">
             <p class="footer-heading">Redes</p>
             <ul class="footer-social">
@@ -297,18 +760,20 @@
             </ul>
           </div>
 
+          <!-- navegación -->
           <div class="col-lg-3 col-sm-6">
             <p class="footer-heading">Navegación</p>
             <ul class="footer-links">
               <li><a href="index.html">Inicio</a></li>
               <li><a href="pages/review.html">Reviews</a></li>
-              <li><a href="pages/gallery.html">Galería</a></li>
-              <li><a href="pages/about.html">Acerca de</a></li>
-              <li><a href="pages/contact.html">Contacto</a></li>
-              <li><a href="pages/login.html">Login / Registro</a></li>
+              <li><a href="pages/galeria.html">Galería</a></li>
+              <li><a href="pages/nosotros.html">Nosotros</a></li>
+              <li><a href="pages/contacto.html">Contacto</a></li>
+              <li><a href="pages/login.html">Login | Registro</a></li>
             </ul>
           </div>
 
+          <!-- legal -->
           <div class="col-lg-2 col-sm-6">
             <p class="footer-heading">Legal</p>
             <ul class="footer-links">
@@ -322,10 +787,12 @@
 
         <div class="footer-bottom">
           <p>
-            &copy; 2024 Game<span class="neon-dot">Critic</span>. Todos los
+            &copy; 2026 Game<span class="neon-dot">Critic</span>. Todos los
             derechos reservados.
           </p>
-          <p>Hecho con <span class="neon-dot">&#9829;</span> para los gamers</p>
+          <p>
+            Hecho desde <span class="neon-dot">&#9829;</span> Argentina. 
+          </p>
         </div>
       </div>
     </footer>
