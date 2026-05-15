@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <!-- Navbar principal — el "active" lo pone cada página según dónde esté el usuario -->
+    <!-- navbar -->
     <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
       <div class="container">
         <a class="navbar-brand" href="index.html">GAME<span>CRITIC</span></a>
@@ -65,7 +65,7 @@
               <a class="nav-link" href="pages/login.html">Login</a>
             </li>
             <li class="nav-item ms-lg-2">
-              <a class="nav-link btn-nav-subscribe" href="pages/login.html"
+              <a class="nav-link btn-nav-subscribe" href="#" data-bs-toggle="modal" data-bs-target="#modalSuscripcion"
                 >Suscribirse</a
               >
             </li>
@@ -74,13 +74,107 @@
       </div>
     </nav>
 
-    <!-- ═══════════════════════════════════════════════════════════════════
-         HERO CAROUSEL
-         Las imágenes del hero todavía no existen — hay que agregar los
-         archivos en img/hero/ con los nombres que aparecen en cada slide.
-         Por ahora usamos las img/aX.webp como placeholder para que el
-         carousel funcione y se pueda probar el layout.
-         ═══════════════════════════════════════════════════════════════════ -->
+    <!-- modal -->
+    <div class="modal fade" id="modalSuscripcion" tabindex="-1" aria-labelledby="modalSuscripcionLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-gc">
+          <div class="modal-header modal-gc-header">
+            <div>
+              <p class="section-label mb-1">Newsletter</p>
+              <h5 class="modal-title modal-gc-title" id="modalSuscripcionLabel">Sin spam.<br/>Solo gaming.</h5>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body modal-gc-body">
+            <p class="modal-gc-desc">Las mejores reseñas y novedades directamente en tu gmail. Una vez por semana, nada más.</p>
+            <form id="formSuscripcion" novalidate>
+              <div class="mb-3">
+                <label class="modal-gc-label" for="inputNombre">Nombre</label>
+                <input
+                  type="text"
+                  id="inputNombre"
+                  class="form-control modal-gc-input"
+                  placeholder="Tu nombre"
+                  required
+                  minlength="2"
+                />
+                <div class="modal-gc-error" id="errorNombre">Ingresá tu nombre.</div>
+              </div>
+              <div class="mb-4">
+                <label class="modal-gc-label" for="inputEmail">Gmail</label>
+                <input
+                  type="email"
+                  id="inputEmail"
+                  class="form-control modal-gc-input"
+                  placeholder="tu@gmail.com"
+                  required
+                />
+                <div class="modal-gc-error" id="errorEmail">Ingresá un Gmail válido (tu@gmail.com)</div>
+              </div>
+              <button type="submit" class="btn-primary-gc w-100">
+                Suscribirme <i class="bi bi-arrow-right ms-2"></i>
+              </button>
+            </form>
+            <div id="modalExito" class="modal-gc-exito d-none">
+              <i class="bi bi-check-circle-fill text-neon fs-2"></i>
+              <p>Acabas de suscribirte<br/><span>Te va llegar un mail pronto.</span></p>
+            </div>
+            <p class="modal-gc-note"><i class="bi bi-shield-check me-1 text-neon"></i>Sin spam. Cancelá cuando quieras.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var form = document.getElementById("formSuscripcion");
+        var inputNombre = document.getElementById("inputNombre");
+        var inputEmail = document.getElementById("inputEmail");
+        var errorNombre = document.getElementById("errorNombre");
+        var errorEmail = document.getElementById("errorEmail");
+        var exito = document.getElementById("modalExito");
+
+        function validarNombre() {
+          var ok = inputNombre.value.trim().length >= 2;
+          inputNombre.classList.toggle("input-error", !ok);
+          errorNombre.classList.toggle("visible", !ok);
+          return ok;
+        }
+
+        function validarEmail() {
+          var val = inputEmail.value.trim().toLowerCase();
+          var ok = /^[^\s@]+@gmail\.com$/.test(val);
+          inputEmail.classList.toggle("input-error", !ok);
+          errorEmail.classList.toggle("visible", !ok);
+          return ok;
+        }
+
+        inputNombre.addEventListener("input", validarNombre);
+        inputEmail.addEventListener("input", validarEmail);
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var n = validarNombre();
+          var em = validarEmail();
+          if (n && em) {
+            form.classList.add("d-none");
+            exito.classList.remove("d-none");
+          }
+        });
+
+        document.getElementById("modalSuscripcion").addEventListener("hidden.bs.modal", function () {
+          form.classList.remove("d-none");
+          exito.classList.add("d-none");
+          inputNombre.value = "";
+          inputEmail.value = "";
+          inputNombre.classList.remove("input-error");
+          inputEmail.classList.remove("input-error");
+          errorNombre.classList.remove("visible");
+          errorEmail.classList.remove("visible");
+        });
+      })();
+    </script>
+
     <div
       id="heroCarousel"
       class="carousel slide carousel-fade"
@@ -117,7 +211,7 @@
           <div class="hero-slide">
             <div
               class="hero-bg"
-              style="background-image: url(&quot;img/elden.png&quot;)"
+              style="background-image: url(&quot;img/elden.webp&quot;)"
             ></div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
@@ -125,7 +219,7 @@
               <h1 class="hero-title">Elden Ring</h1>
               <p class="hero-desc">
                 Para el que viene jugando Soulslikes esto es papita para el loro. <br>
-                Lanzada por FromSoftware
+                Lanzado por FromSoftware, simulador de morir contra jefes.
               </p>
               <div class="hero-score">
                 <div class="score-box">87</div>
@@ -147,7 +241,7 @@
             <div
               class="hero-bg"
               style="
-                background-image: url(&quot;img/gow.png&quot;);
+                background-image: url(&quot;img/gow.webp&quot;);
                 background-position: center 20%;
               "
             ></div>
@@ -156,9 +250,8 @@
               <div class="hero-badge">Juego del Año 2022</div>
               <h1 class="hero-title">God of War<br />Ragnarök</h1>
               <p class="hero-desc">
-                Kratos y Atreus enfrentan el apocalipsis nórdico. Una aventura
-                cinematográfica de proporciones épicas que supera a su
-                predecesor en todos los aspectos.
+                Más años que la humedad la saga como será que Kratos tuvo hijo.<br>
+                no creo que hubiesen pagado para ser goty - (aguante el de PS2).
               </p>
               <div class="hero-score">
                 <div class="score-box">89</div>
@@ -180,7 +273,7 @@
             <div
               class="hero-bg"
               style="
-                background-image: url(&quot;img/cyber.png&quot;);
+                background-image: url(&quot;img/cyber.webp&quot;);
                 background-position: center 15%;
               "
             ></div>
@@ -206,37 +299,27 @@
           </div>
         </div>
 
-        <!-- slide 4 fallout -->
+        <!-- slide 4 war thunder -->
         <div class="carousel-item">
           <div class="hero-slide">
             <div
               class="hero-bg"
               style="
-                background-image: url(&quot;img/fallout.png&quot;);
+                background-image: url(&quot;img/war.webp&quot;);
                 background-position: center 10%;
               "
             ></div>
-            <div
-              class="hero-overlay"  
-              style="
-                background: linear-gradient(
-                  to right,
-                  rgba(10, 10, 12, 0.95) 0%,
-                  rgba(10, 10, 12, 0.7) 50%,
-                  rgba(10, 10, 12, 0.25) 100%
-                );
-              "
-            ></div>
+            <div class="hero-overlay"></div>
             <div class="hero-content">
-              <div class="hero-badge">Bethesda</div>
-              <h1 class="hero-title">Fallout New Vegas</h1>
+              <div class="hero-badge">Gaijin Entertainment</div>
+              <h1 class="hero-title">War Thunder</h1>
               <p class="hero-desc">
-                El juego favorito de tu juego favorito.
-                <br> aúnque el que creo esta slider es enfermo de este juego, efectivamente es un juegaso.
+                Guerra, tanques, aviones encima gratis que más queres?
+                <br> Si no pagas el premium este juego te va dejar pelado pero eh juegaso.
               </p>
               </p>
               <div class="hero-score">
-                <div class="score-box">79</div>
+                <div class="score-box">71</div>
                 <div class="score-label">Score<br />Game Critic</div>
               </div>
               <div>
@@ -287,8 +370,8 @@
               <div class="col-md-6">
                 <div class="review-card">
                   <div class="review-card-img">
-                    <img src="img/elden.png" alt="Elden Ring" loading="lazy" />
-                    <span class="card-genre">RPG / Soulslike</span>
+                    <img src="img/elden.webp" alt="Elden Ring" loading="lazy" />
+                    <span class="card-genre">RPG | Soulslike</span>
                     <div class="card-score">92</div>
                   </div>
                   <div class="review-card-body">
@@ -309,7 +392,7 @@
                 <div class="review-card">
                   <div class="review-card-img">
                     <img
-                      src="img/gow.png"
+                      src="img/gow.webp"
                       alt="God of War Ragnarök"
                       loading="lazy"
                     />
@@ -334,17 +417,15 @@
               <div class="col-md-6">
                 <div class="review-card">
                   <div class="review-card-img">
-                    <img src="img/fallout.png" alt="Fallout" loading="lazy" />
+                    <img src="img/fallout.webp" alt="Fallout" loading="lazy" />
                     <span class="card-genre">Action | RPG</span>
                     <div class="card-score">96</div>
                   </div>
                   <div class="review-card-body">
                     <h5>Fallout New Vegas</h5>
                     <p>
-                      Imagínense que son un mensajero que vive en un mundo destrozado por la guerra nuclear, 
-                      caminando por el desierto de Mojave con un paquete misterioso en las manos. 
-                      De repente, un tipo con un traje de cuadros te asalta, te pega un tiro en la cabeza, te entierra y se lleva lo que traías. 
-                      Pero el juego te va llevando a otra parte.
+                      Fallout: New Vegas básicamente te tira en un mundo hecho pelota después de una guerra nuclear, en pleno desierto de Las Vegas. 
+                      Arrancás siendo un mensajero al que casi lo boletean.
                     </p>
                     <a href="pages/review.html" class="btn-review"
                       >Ver review <i class="bi bi-arrow-right ms-1"></i
@@ -358,17 +439,18 @@
                 <div class="review-card">
                   <div class="review-card-img">
                     <img
-                      src="img/cyber.png"
+                      src="img/cyber.webp"
                       alt="Cyberpunk 2077"
                       loading="lazy"
                     />
-                    <span class="card-genre">RPG / Open World</span>
+                    <span class="card-genre">RPG | Open World</span>
                     <div class="card-score">91</div>
                   </div>
                   <div class="review-card-body">
                     <h5>Cyberpunk 2077: Phantom Liberty</h5>
                     <p>
-                      La gente se quejo de un openworld muerto, pero con la 2.0 y sus dlcs CD Projekt salvo este juego.
+                      Te metes de lleno en Night City, una ciudad futurista totalmente pasada de rosca 
+                      donde las corporaciones manejan todo y la gente vive entre implantes, violencia y mambos. 
                     </p>
                     <a href="pages/review.html" class="btn-review"
                       >Ver review <i class="bi bi-arrow-right ms-1"></i
@@ -381,7 +463,7 @@
                 <div class="review-card">
                   <div class="review-card-img">
                     <img
-                      src="img/outer.png"
+                      src="img/outer.webp"
                       alt="Outer Wilds"
                       loading="lazy"
                     />
@@ -407,7 +489,7 @@
                 <div class="review-card">
                   <div class="review-card-img">
                     <img 
-                    src="img/re4.png" 
+                    src="img/re4.webp" 
                     alt="Resident Evil 4"
                     loading="lazy"
                     />
@@ -417,9 +499,9 @@
                   <div class="review-card-body">
                     <h5>Resident Evil 4 Remake</h5>
                     <p>
-                      Capcom tomó uno de los mejores juegos de la historia y lo
-                      rehízo respetando su esencia. El resultado es un remake
-                      que supera al original en casi todos los aspectos.
+                      Capcom hizo los deberes y se mando terrible remake 
+                      sin tocar cosas raras, si bien ya viene de un juegaso
+                      aquí la sacaron del estadio. 
                     </p>
                     <a href="pages/review.html" class="btn-review"
                       >Ver review <i class="bi bi-arrow-right ms-1"></i
@@ -435,7 +517,7 @@
                     <div class="col-md-4">
                       <div class="review-card-img h-100">
                         <img 
-                         src="img/silk.png" 
+                         src="img/silk.webp" 
                          alt="Silksong"
                          loading="lazy"
                          />
@@ -455,8 +537,8 @@
                         <div>
                           <h5>Hollow Knight Silksong</h5>
                           <p style="-webkit-line-clamp: unset">
-                            Hollow Knight: Silksong es la secuela del aclamado metroidvania, desarrollada por Team Cherry y lanzada el 4 de septiembre de 2025 para Windows, macOS, Linux y Nintendo Switch.  
-                            La narrativa sigue a Hornet, quien, tras ser capturada y transportada a la lejana tierra de Telalejana, debe ascender hacia la Ciudadela para descubrir la identidad de sus captores y resolver los misterios de un reino gobernado por la seda y la canción. 
+                            Grande Team Cherry explotando a sus trabajadores pero sacando un metroidvania como la gente,
+                            juegaso indie aúnque te re perdes con el mapa ese, valía 7 usd en steam argentina. 
                           </p>  
                         </div>
                         <a href="pages/review.html" class="btn-review"
@@ -557,7 +639,7 @@
 
                 <div class="rank-item">
                   <div class="rank-num">01</div>
-                  <img src="img/requiem.png" alt="Resident Evil Requiem" class="rank-img"/>
+                  <img src="img/requiem.webp" alt="Resident Evil Requiem" class="rank-img"/>
                   <div class="rank-info">
                     <div class="rank-name">RE: Requiem</div>
                     <div class="rank-genre">Horror</div>
@@ -567,7 +649,7 @@
 
                 <div class="rank-item">
                   <div class="rank-num">02</div>
-                  <img src="img/reanimal.png" alt="Reanimal" class="rank-img" />
+                  <img src="img/reanimal.webp" alt="Reanimal" class="rank-img" />
                   <div class="rank-info">
                     <div class="rank-name">Reanimal</div>
                     <div class="rank-genre">Indie Horror</div>
@@ -577,7 +659,7 @@
 
                 <div class="rank-item">
                   <div class="rank-num">03</div>
-                  <img src="img/fh6.png" alt="Forza 6" class="rank-img" />
+                  <img src="img/fh6.webp" alt="Forza 6" class="rank-img" />
                   <div class="rank-info">
                     <div class="rank-name">Forza Horizon 6</div>
                     <div class="rank-genre">Racing</div>
@@ -587,7 +669,7 @@
 
                 <div class="rank-item">
                   <div class="rank-num">04</div>
-                  <img src="img/hades.png" alt="Hades II" class="rank-img" />
+                  <img src="img/hades.webp" alt="Hades II" class="rank-img" />
                   <div class="rank-info">
                     <div class="rank-name">Hades II</div>
                     <div class="rank-genre">Hack and Slash</div>
@@ -598,7 +680,7 @@
                 <div class="rank-item">
                   <div class="rank-num">05</div>
                   <img
-                    src="img/kingdom.png"
+                    src="img/kingdom.webp"
                     alt="Kingdom Come Deliverance 2"
                     class="rank-img"
                   />
@@ -612,6 +694,7 @@
 
               <!-- banner oculto en mobile, visible desde sm en adelante -->
               <div class="sidebar-banner d-none d-sm-block">
+                <img src="img/publi.webp" alt="Publicidad GeForce RTX 5090" class="banner-img" />
                 <h6>Publicidad</h6>
                 <p>GeForce RTX 5090<br />Domina cada pixel</p>
                 <small>Disponible en tiendas seleccionadas</small>
@@ -630,7 +713,7 @@
         <div class="row align-items-center g-5">
           <div class="col-lg-5">
             <div class="gotm-img-wrap">
-              <img src="img/elden.png" alt="Elden Ring — Juego del Mes" />
+              <img src="img/elden.webp" alt="Elden Ring — Juego del Mes" />
             </div>
           </div>
 
@@ -702,7 +785,7 @@
                 class="form-control"
                 placeholder="tu@email.com"
               />
-              <button class="btn-sub" type="button">Suscribirse</button>
+              <button class="btn-sub" type="button" data-bs-toggle="modal" data-bs-target="#modalSuscripcion">Suscribirse</button>
             </div>
             <p class="newsletter-note">
               <i class="bi bi-shield-check me-1 text-neon"></i>
