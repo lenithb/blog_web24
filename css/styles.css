@@ -459,6 +459,13 @@ h6 {
   overflow: hidden;
 }
 
+.review-card-body p.line-clamp-none {
+  display: block;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: unset;
+  overflow: visible;
+}
+
 .btn-review {
   font-family: var(--ff-display);
   font-size: 0.78rem;
@@ -739,7 +746,7 @@ h6 {
   color: var(--bg-base);
 }
 
-/* ─── juego del me ─── */
+/* ─── juego del mes ─── */
 .gotm-section {
   background: var(--bg-surface);
   border-top: 1px solid var(--border-glass);
@@ -1135,7 +1142,7 @@ h6 {
   color: var(--bg-base);
 }
 
-/* ─── utilidadaes bootstrap ─── */
+/* ─── utilidades bootstrap ─── */
 .text-neon {
   color: var(--neon);
 }

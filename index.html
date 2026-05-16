@@ -8,11 +8,11 @@
       content="Game Critic — Reseñas premium de videojuegos, análisis profundos y las últimas novedades del mundo gaming."
     />
     <title>Game Critic | Reseñas de Juegos</title>
-    <link rel="icon" href="../img/favicon/favicon-32x32.png" />
-    <link rel="icon" href="../img/favicon/android-chrome192x192.png" />
-    <link rel="icon" href="../img/favicon/android-chrome-512x512.png" />
-    <link rel="icon" href="../img/favicon/apple-touch-icon.png" />
-    <link rel="icon" href="../img/favicon/favicon.ico" />
+    <link rel="icon" href="img/favicon/favicon-32x32.png" />
+    <link rel="icon" href="img/favicon/android-chrome-192x192.png" />
+    <link rel="icon" href="img/favicon/android-chrome-512x512.png" />
+    <link rel="icon" href="img/favicon/apple-touch-icon.png" />
+    <link rel="icon" href="img/favicon/favicon.ico" />
 
     <link
       rel="stylesheet"
@@ -65,7 +65,11 @@
               <a class="nav-link" href="pages/login.html">Login</a>
             </li>
             <li class="nav-item ms-lg-2">
-              <a class="nav-link btn-nav-subscribe" href="#" data-bs-toggle="modal" data-bs-target="#modalSuscripcion"
+              <a
+                class="nav-link btn-nav-subscribe"
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#modalSuscripcion"
                 >Suscribirse</a
               >
             </li>
@@ -75,18 +79,34 @@
     </nav>
 
     <!-- modal -->
-    <div class="modal fade" id="modalSuscripcion" tabindex="-1" aria-labelledby="modalSuscripcionLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="modalSuscripcion"
+      tabindex="-1"
+      aria-labelledby="modalSuscripcionLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content modal-gc">
           <div class="modal-header modal-gc-header">
             <div>
               <p class="section-label mb-1">Newsletter</p>
-              <h5 class="modal-title modal-gc-title" id="modalSuscripcionLabel">Sin spam.<br/>Solo gaming.</h5>
+              <h5 class="modal-title modal-gc-title" id="modalSuscripcionLabel">
+                Sin spam.<br />Solo gaming.
+              </h5>
             </div>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
           </div>
           <div class="modal-body modal-gc-body">
-            <p class="modal-gc-desc">Las mejores reseñas y novedades directamente en tu gmail. Una vez por semana, nada más.</p>
+            <p class="modal-gc-desc">
+              Las mejores reseñas y novedades directamente en tu gmail. Una vez
+              por semana, nada más.
+            </p>
             <form id="formSuscripcion" novalidate>
               <div class="mb-3">
                 <label class="modal-gc-label" for="inputNombre">Nombre</label>
@@ -98,7 +118,9 @@
                   required
                   minlength="2"
                 />
-                <div class="modal-gc-error" id="errorNombre">Ingresá tu nombre.</div>
+                <div class="modal-gc-error" id="errorNombre">
+                  Ingresá tu nombre.
+                </div>
               </div>
               <div class="mb-4">
                 <label class="modal-gc-label" for="inputEmail">Gmail</label>
@@ -109,7 +131,9 @@
                   placeholder="tu@gmail.com"
                   required
                 />
-                <div class="modal-gc-error" id="errorEmail">Ingresá un Gmail válido (tu@gmail.com)</div>
+                <div class="modal-gc-error" id="errorEmail">
+                  Ingresá un Gmail válido (tu@gmail.com)
+                </div>
               </div>
               <button type="submit" class="btn-primary-gc w-100">
                 Suscribirme <i class="bi bi-arrow-right ms-2"></i>
@@ -117,9 +141,16 @@
             </form>
             <div id="modalExito" class="modal-gc-exito d-none">
               <i class="bi bi-check-circle-fill text-neon fs-2"></i>
-              <p>Acabas de suscribirte<br/><span>Te va llegar un mail pronto.</span></p>
+              <p>
+                Acabas de suscribirte<br /><span
+                  >Te va llegar un mail pronto.</span
+                >
+              </p>
             </div>
-            <p class="modal-gc-note"><i class="bi bi-shield-check me-1 text-neon"></i>Sin spam. Cancelá cuando quieras.</p>
+            <p class="modal-gc-note">
+              <i class="bi bi-shield-check me-1 text-neon"></i>Sin spam. Cancelá
+              cuando quieras.
+            </p>
           </div>
         </div>
       </div>
@@ -162,16 +193,18 @@
           }
         });
 
-        document.getElementById("modalSuscripcion").addEventListener("hidden.bs.modal", function () {
-          form.classList.remove("d-none");
-          exito.classList.add("d-none");
-          inputNombre.value = "";
-          inputEmail.value = "";
-          inputNombre.classList.remove("input-error");
-          inputEmail.classList.remove("input-error");
-          errorNombre.classList.remove("visible");
-          errorEmail.classList.remove("visible");
-        });
+        document
+          .getElementById("modalSuscripcion")
+          .addEventListener("hidden.bs.modal", function () {
+            form.classList.remove("d-none");
+            exito.classList.add("d-none");
+            inputNombre.value = "";
+            inputEmail.value = "";
+            inputNombre.classList.remove("input-error");
+            inputEmail.classList.remove("input-error");
+            errorNombre.classList.remove("visible");
+            errorEmail.classList.remove("visible");
+          });
       })();
     </script>
 
@@ -218,7 +251,8 @@
               <div class="hero-badge">Reseña Destacada</div>
               <h1 class="hero-title">Elden Ring</h1>
               <p class="hero-desc">
-                Para el que viene jugando Soulslikes esto es papita para el loro. <br>
+                Para el que viene jugando Soulslikes esto es papita para el
+                loro. <br />
                 Lanzado por FromSoftware, simulador de morir contra jefes.
               </p>
               <div class="hero-score">
@@ -250,7 +284,8 @@
               <div class="hero-badge">Juego del Año 2022</div>
               <h1 class="hero-title">God of War<br />Ragnarök</h1>
               <p class="hero-desc">
-                Más años que la humedad la saga como será que Kratos tuvo hijo.<br>
+                Más años que la humedad la saga como será que Kratos tuvo
+                hijo.<br />
                 no creo que hubiesen pagado para ser goty - (aguante el de PS2).
               </p>
               <div class="hero-score">
@@ -282,7 +317,7 @@
               <div class="hero-badge">Redención Total</div>
               <h1 class="hero-title">Cyberpunk<br />2077</h1>
               <p class="hero-desc">
-                Salió con 100 mil bugs y mala optimización.<br>
+                Salió con 100 mil bugs y mala optimización.<br />
                 Pero hoy en día es un juegaso para testear la pc y pasartelo.
               </p>
               <div class="hero-score">
@@ -315,8 +350,9 @@
               <h1 class="hero-title">War Thunder</h1>
               <p class="hero-desc">
                 Guerra, tanques, aviones encima gratis que más queres?
-                <br> Si no pagas el premium este juego te va dejar pelado pero eh juegaso.
-              </p>
+                <br />
+                Si no pagas el premium este juego te va dejar pelado pero eh
+                juegaso.
               </p>
               <div class="hero-score">
                 <div class="score-box">71</div>
@@ -352,7 +388,6 @@
     </div>
     <!-- fin hero carousel -->
 
-
     <section class="content-wrapper">
       <div class="container">
         <div class="row g-4">
@@ -378,7 +413,8 @@
                     <h5>Elden Ring</h5>
                     <p>
                       El simulador de hoguera, lvl, rodar, morir, repetir
-                      sacando que no es juego para todo el mundo, honestamente top 3 souls.
+                      sacando que no es juego para todo el mundo, honestamente
+                      top 3 souls.
                     </p>
                     <a href="pages/review.html" class="btn-review"
                       >Ver review <i class="bi bi-arrow-right ms-1"></i
@@ -424,8 +460,10 @@
                   <div class="review-card-body">
                     <h5>Fallout New Vegas</h5>
                     <p>
-                      Fallout: New Vegas básicamente te tira en un mundo hecho pelota después de una guerra nuclear, en pleno desierto de Las Vegas. 
-                      Arrancás siendo un mensajero al que casi lo boletean.
+                      Fallout: New Vegas básicamente te tira en un mundo hecho
+                      pelota después de una guerra nuclear, en pleno desierto de
+                      Las Vegas. Arrancás siendo un mensajero al que casi lo
+                      boletean.
                     </p>
                     <a href="pages/review.html" class="btn-review"
                       >Ver review <i class="bi bi-arrow-right ms-1"></i
@@ -449,8 +487,9 @@
                   <div class="review-card-body">
                     <h5>Cyberpunk 2077: Phantom Liberty</h5>
                     <p>
-                      Te metes de lleno en Night City, una ciudad futurista totalmente pasada de rosca 
-                      donde las corporaciones manejan todo y la gente vive entre implantes, violencia y mambos. 
+                      Te metes de lleno en Night City, una ciudad futurista
+                      totalmente pasada de rosca donde las corporaciones manejan
+                      todo y la gente vive entre implantes, violencia y mambos.
                     </p>
                     <a href="pages/review.html" class="btn-review"
                       >Ver review <i class="bi bi-arrow-right ms-1"></i
@@ -473,7 +512,9 @@
                   <div class="review-card-body">
                     <h5>Outer Wilds</h5>
                     <p>
-                      Personalmente una joyita,  es un juego de exploración espacial en primera persona donde encarnas a un astronauta atrapado en un bucle temporal de 22 minutos.
+                      Personalmente una joyita, es un juego de exploración
+                      espacial en primera persona donde encarnas a un astronauta
+                      atrapado en un bucle temporal de 22 minutos.
                     </p>
                     <a href="pages/review.html" class="btn-review"
                       >Ver review <i class="bi bi-arrow-right ms-1"></i
@@ -482,16 +523,14 @@
                 </div>
               </div>
 
-              
-
               <!-- re4 remake -->
               <div class="col-md-6">
                 <div class="review-card">
                   <div class="review-card-img">
-                    <img 
-                    src="img/re4.webp" 
-                    alt="Resident Evil 4"
-                    loading="lazy"
+                    <img
+                      src="img/re4.webp"
+                      alt="Resident Evil 4"
+                      loading="lazy"
                     />
                     <span class="card-genre">Survival Horror</span>
                     <div class="card-score">93</div>
@@ -499,9 +538,9 @@
                   <div class="review-card-body">
                     <h5>Resident Evil 4 Remake</h5>
                     <p>
-                      Capcom hizo los deberes y se mando terrible remake 
-                      sin tocar cosas raras, si bien ya viene de un juegaso
-                      aquí la sacaron del estadio. 
+                      Capcom hizo los deberes y se mando terrible remake sin
+                      tocar cosas raras, si bien ya viene de un juegaso aquí la
+                      sacaron del estadio.
                     </p>
                     <a href="pages/review.html" class="btn-review"
                       >Ver review <i class="bi bi-arrow-right ms-1"></i
@@ -516,11 +555,11 @@
                   <div class="row g-0">
                     <div class="col-md-4">
                       <div class="review-card-img h-100">
-                        <img 
-                         src="img/silk.webp" 
-                         alt="Silksong"
-                         loading="lazy"
-                         />
+                        <img
+                          src="img/silk.webp"
+                          alt="Silksong"
+                          loading="lazy"
+                        />
                         <span class="card-genre">Indie Destacado</span>
                         <div
                           class="card-score"
@@ -536,10 +575,12 @@
                       >
                         <div>
                           <h5>Hollow Knight Silksong</h5>
-                          <p style="-webkit-line-clamp: unset">
-                            Grande Team Cherry explotando a sus trabajadores pero sacando un metroidvania como la gente,
-                            juegaso indie aúnque te re perdes con el mapa ese, valía 7 usd en steam argentina. 
-                          </p>  
+                          <p class="line-clamp-none">
+                            Grande Team Cherry explotando a sus trabajadores
+                            pero sacando un metroidvania como la gente, juegaso
+                            indie aúnque te re perdes con el mapa ese, valía 7
+                            usd en steam argentina.
+                          </p>
                         </div>
                         <a href="pages/review.html" class="btn-review"
                           >Ver review <i class="bi bi-arrow-right ms-1"></i
@@ -635,11 +676,17 @@
 
               <!-- estrenos -->
               <div class="sidebar-widget">
-                <h6><i class="bi bi-trophy me-2"></i>Estrenos final 2025-2026</h6>
+                <h6>
+                  <i class="bi bi-trophy me-2"></i>Estrenos final 2025-2026
+                </h6>
 
                 <div class="rank-item">
                   <div class="rank-num">01</div>
-                  <img src="img/requiem.webp" alt="Resident Evil Requiem" class="rank-img"/>
+                  <img
+                    src="img/requiem.webp"
+                    alt="Resident Evil Requiem"
+                    class="rank-img"
+                  />
                   <div class="rank-info">
                     <div class="rank-name">RE: Requiem</div>
                     <div class="rank-genre">Horror</div>
@@ -649,7 +696,11 @@
 
                 <div class="rank-item">
                   <div class="rank-num">02</div>
-                  <img src="img/reanimal.webp" alt="Reanimal" class="rank-img" />
+                  <img
+                    src="img/reanimal.webp"
+                    alt="Reanimal"
+                    class="rank-img"
+                  />
                   <div class="rank-info">
                     <div class="rank-name">Reanimal</div>
                     <div class="rank-genre">Indie Horror</div>
@@ -694,7 +745,11 @@
 
               <!-- banner oculto en mobile, visible desde sm en adelante -->
               <div class="sidebar-banner d-none d-sm-block">
-                <img src="img/publi.webp" alt="Publicidad GeForce RTX 5090" class="banner-img" />
+                <img
+                  src="img/publi.webp"
+                  alt="Publicidad GeForce RTX 5090"
+                  class="banner-img"
+                />
                 <h6>Publicidad</h6>
                 <p>GeForce RTX 5090<br />Domina cada pixel</p>
                 <small>Disponible en tiendas seleccionadas</small>
@@ -785,7 +840,14 @@
                 class="form-control"
                 placeholder="tu@email.com"
               />
-              <button class="btn-sub" type="button" data-bs-toggle="modal" data-bs-target="#modalSuscripcion">Suscribirse</button>
+              <button
+                class="btn-sub"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#modalSuscripcion"
+              >
+                Suscribirse
+              </button>
             </div>
             <p class="newsletter-note">
               <i class="bi bi-shield-check me-1 text-neon"></i>
@@ -873,9 +935,7 @@
             &copy; 2026 Game<span class="neon-dot">Critic</span>. Todos los
             derechos reservados.
           </p>
-          <p>
-            Hecho desde <span class="neon-dot">&#9829;</span> Argentina. 
-          </p>
+          <p>Hecho desde <span class="neon-dot">&#9829;</span> Argentina.</p>
         </div>
       </div>
     </footer>
