@@ -1397,3 +1397,41 @@ h6 {
     align-items: center;
   }
 }
+
+/* ─── categorías: link ocupa toda la fila ─── */
+.cat-list li {
+  cursor: pointer;
+}
+
+.cat-list li a {
+  flex: 1;
+  color: inherit;
+}
+
+.cat-list li a:hover {
+  color: var(--neon);
+}
+
+/* ─── newsletter responsive fix ─── */
+.newsletter-form-wrap {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+@media (max-width: 767.98px) {
+  .newsletter-form {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .newsletter-form .form-control {
+    border-radius: var(--radius) !important;
+    width: 100%;
+  }
+
+  .newsletter-form .btn-sub {
+    border-radius: var(--radius) !important;
+    width: 100%;
+  }
+}
