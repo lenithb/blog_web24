@@ -1069,6 +1069,28 @@ h6 {
   margin-bottom: 2rem;
 }
 
+.placeholder-hero-login {
+  margin-top: 57px;
+  padding: 1rem 0 5rem;
+  background: linear-gradient(
+    180deg,
+    var(--bg-surface) 0%,
+    var(--bg-base) 100%
+  );
+  border-bottom: 1px solid var(--border-glass);
+  text-align: center;
+}
+.placeholder-hero-login h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+.placeholder-hero-login p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
 .btn-back {
   font-family: var(--ff-display);
   font-size: 0.85rem;
@@ -1088,6 +1110,7 @@ h6 {
 }
 
 /* suscripción */
+
 .modal-gc {
   background: var(--bg-surface);
   border: 1px solid var(--border-glass);
