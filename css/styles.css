@@ -1436,3 +1436,51 @@ h6 {
     align-items: center;
   }
 }
+.gallery-item {
+  position: relative;
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-glass);
+  background-color: #121212;
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.gallery-item figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.25rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gallery-item figcaption h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.gallery-item figcaption p {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+.gallery-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--neon);
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+.gallery-item:hover figcaption {
+  opacity: 1;
+}
