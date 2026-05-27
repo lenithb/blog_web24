@@ -1218,6 +1218,17 @@ h6 {
   backdrop-filter: blur(4px);
 }
 
+.error-num {
+  font-family: var(--ff-display);
+  font-size: clamp(6rem, 18vw, 14rem);
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(57, 255, 100, 0.25);
+  letter-spacing: -0.04em;
+  user-select: none;
+}
+
 /* utilidades */
 .text-neon {
   color: var(--neon);
@@ -1467,7 +1478,9 @@ h6 {
   background-color: #121212;
   aspect-ratio: 16 / 9;
   cursor: pointer;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 .gallery-item img {
   width: 100%;
@@ -1481,7 +1494,11 @@ h6 {
   left: 0;
   width: 100%;
   padding: 1.25rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
   color: #ffffff;
   opacity: 0;
   transition: opacity 0.3s ease;
