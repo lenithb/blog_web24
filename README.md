@@ -35,13 +35,13 @@ Seguramente se lo suba por vercel.
 - [x] Landing page con carousel, cards de reviews, sidebar y newsletter
 - [x] Página 404
 - [ ] Reviews (estructura base armada, falta contenido)
-- [ ] Galería
+- [x] Galería
 - [ ] Nosotros
 - [ ] Contacto
-- [ ] Login / Registro
+- [x] Login / Registro
 
 ## Notas
 
 - Las páginas que están como placeholder tienen comentarios HTML indicando qué se puede implementar en cada una.
-- El CSS tiene variables en `:root` para mantener consistencia con los colores y tipografías.
+- El CSS tiene variables en `:root` para crear estilos dinamicos.
 - Los favicons están en `img/favicon/`.
