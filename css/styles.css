@@ -45,6 +45,7 @@ a {
   text-decoration: none;
   transition: color var(--transition);
 }
+
 a:hover {
   color: var(--neon);
 }
@@ -170,6 +171,7 @@ h6 {
 .navbar-toggler {
   border-color: var(--border-glass);
 }
+
 .navbar-toggler-icon {
   filter: invert(1);
 }
@@ -200,18 +202,14 @@ h6 {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(
-      to right,
+    linear-gradient(to right,
       rgba(10, 10, 12, 0.92) 0%,
       rgba(10, 10, 12, 0.65) 50%,
-      rgba(10, 10, 12, 0.2) 100%
-    ),
-    linear-gradient(
-      to bottom,
+      rgba(10, 10, 12, 0.2) 100%),
+    linear-gradient(to bottom,
       transparent 55%,
       rgba(10, 10, 12, 0.7) 80%,
-      rgba(10, 10, 12, 1) 100%
-    );
+      rgba(10, 10, 12, 1) 100%);
 }
 
 .hero-content {
@@ -515,6 +513,7 @@ h6 {
 .search-wrap input::placeholder {
   color: var(--muted);
 }
+
 .search-wrap input:focus {
   outline: none;
   border-color: var(--border-glow);
@@ -632,11 +631,9 @@ h6 {
   position: absolute;
   inset: -1px;
   border-radius: var(--radius-lg);
-  background: linear-gradient(
-    135deg,
-    rgba(57, 255, 100, 0.12),
-    transparent 50%
-  );
+  background: linear-gradient(135deg,
+      rgba(57, 255, 100, 0.12),
+      transparent 50%);
   pointer-events: none;
 }
 .sidebar-banner h6 {
@@ -733,11 +730,9 @@ h6 {
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(57, 255, 100, 0.04) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle,
+      rgba(57, 255, 100, 0.04) 0%,
+      transparent 70%);
   pointer-events: none;
 }
 
@@ -874,11 +869,9 @@ h6 {
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(57, 255, 100, 0.06) 0%,
-    transparent 65%
-  );
+  background: radial-gradient(circle,
+      rgba(57, 255, 100, 0.06) 0%,
+      transparent 65%);
   pointer-events: none;
 }
 
@@ -903,6 +896,7 @@ h6 {
 .newsletter-form .form-control::placeholder {
   color: var(--muted);
 }
+
 .newsletter-form .form-control:focus {
   outline: none;
   box-shadow: none;
@@ -1050,11 +1044,9 @@ h6 {
 .placeholder-hero {
   margin-top: 57px;
   padding: 7rem 0 5rem;
-  background: linear-gradient(
-    180deg,
-    var(--bg-surface) 0%,
-    var(--bg-base) 100%
-  );
+  background: linear-gradient(180deg,
+      var(--bg-surface) 0%,
+      var(--bg-base) 100%);
   border-bottom: 1px solid var(--border-glass);
   text-align: center;
 }
